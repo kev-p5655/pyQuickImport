@@ -18,9 +18,22 @@
         "title": "pyQuickImport: Import Current File"
       }
     ],
+    "keybindings": [
+      {
+        "command": "pyQuickImport.importFile",
+        "key": "alt+enter",
+        "mac": "option+enter",
+        "when": "editorTextFocus && editorLangId == 'python'"
+      } 
+    ],
     "configuration": {
       "title": "pyQuickImport Configuration",
       "properties": {
+        "pyQuickImport.keybindingsEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Used to enable/disable keybindings"
+        },
         "pyQuickImport.pythonExec": {
           "type": "string",
           "default": "python3",

@@ -16,12 +16,19 @@
         - Ex: ./source/something/code.py -> import source.something.code
     - Figure out how to get the current function
         - Then only import that function
-        - from source.something.code import <function>
+        - from source.something.code import <fzunction>
+- Keybinds: Figure out how to make the keybindings conditional on a config property.
+    - https://code.visualstudio.com/api/references/when-clause-contexts
+    - Ex: calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure'
 
 # Issues
 - The "importFile" command seems like it runs twice when you trigger the command?
     - It's very strange when you exit the interpreter it triggers the commands again.
     - I think maybe I don't understand some of the events that happen and something is causing the event handler to get called twice??
+    - Related? https://github.com/microsoft/vscode/issues/109014
+- If you already started the terminal in one file, and you trigger the command again it should only do the importing to python portion.
+    - Could get really fancy and somehow try to detect/remember if you're still in the interpreter?
+        - Could just remember all the imports that have happened and just restart the terminal and do all the imports again.
 
 # pyQuickImport README
 
